@@ -1,7 +1,8 @@
 <h2 class="text-center mt-4">
   <em>
     <%= @article.title %>
-  </em> Article</h2>
+  </em>
+</h2>
 <div class="container">
   <div class="row justify-content-md-center mt-4">
     <div class="col-md-8">
@@ -11,7 +12,6 @@
           <%= link_to gravatar_for(@article.user), user_path(@article) %>
         </div>
         <div class="card-body">
-          <%# simple_format lets us see line breaks when a user hits return in the text area %>
           <div class="card-text text-left">
             <%= simple_format(@article.description) %>
           </div>
@@ -22,8 +22,8 @@
         </div>
         <div class="card-footer text-muted">
           <small>
-              Created <%= time_ago_in_words(@article.created_at) %> ago,
-              Edited <%= time_ago_in_words(@article.updated_at) %> ago
+            Created <%= time_ago_in_words(@article.created_at) %> ago,
+            Edited <%= time_ago_in_words(@article.updated_at) %> ago
           </small>
         </div>
       </div>

@@ -1,4 +1,7 @@
-<h1 class="text-center mt-4">Articles</h1>
+<h1 class="text-center mt-4">boop articles</h1>
+<p class="text-center mt-4">
+  <%= "No boops yet :(" if @articles.empty? %>
+</p>
 <%= render 'articles/pagination' %>
 <%= render 'article' %>
 <%= render 'articles/pagination' %>

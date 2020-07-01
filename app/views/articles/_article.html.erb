@@ -4,7 +4,6 @@
       <div class="col-md-8">
         <div class="card text-center shadow mb-5 bg-white rounded">
           <div class="card-header font-italic">
-            <%# only renders username if article has a user %>
             <% if article.user %>
               by <%= link_to article.user.username, user_path(article.user) %>
             <% end %>
@@ -20,8 +19,8 @@
           </div>
           <div class="card-footer text-muted">
             <small>
-                Created <%= time_ago_in_words(article.created_at) %> ago,
-                Edited <%= time_ago_in_words(article.updated_at) %> ago
+              Created <%= time_ago_in_words(article.created_at) %> ago,
+              Edited <%= time_ago_in_words(article.updated_at) %> ago
             </small>
           </div>
         </div>

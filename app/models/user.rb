@@ -1,8 +1,6 @@
 class User < ApplicationRecord
-  # self keyword is referring to the User object, so all emails belonging to User object will be downcased
   before_save { self.email = email.downcase }
 
-  # dependent: :destroy will destroy all the articles if the user is deleted
   has_many :articles, dependent: :destroy
 
   VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i

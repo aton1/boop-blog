@@ -1,7 +1,6 @@
 require 'digest/md5'
 
 module ApplicationHelper
-  # passing in an option to set the size, if no size is defined then it will be size: 80
   def gravatar_for(user, options = { size: 80 })
     email_address = user.email.downcase
     hash = Digest::MD5.hexdigest(email_address)

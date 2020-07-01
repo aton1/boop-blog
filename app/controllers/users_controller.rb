@@ -4,12 +4,10 @@ class UsersController < ApplicationController
   before_action :require_same_user, only: [:edit, :update, :destroy]
 
   def index
-    # @users = User.all
     @users = User.paginate(page: params[:page], per_page: 5)
   end
 
   def show
-    # @articles = @user.articles
     @articles = @user.articles.paginate(page: params[:page], per_page: 5)
   end
 
@@ -24,9 +22,8 @@ class UsersController < ApplicationController
     @user = User.new(user_params)
 
     if @user.save
-      # log the user in once they sign up
       session[:user_id] = @user.id
-      flash[:notice] = "Welcome to the boop, #{@user.username}!"
+      flash[:notice] = "Welcome to boop, #{@user.username}!"
       redirect_to @user
     else
       render 'new'
@@ -44,7 +41,6 @@ class UsersController < ApplicationController
 
   def destroy
     if @user.destroy
-      # had to set the condition because if an admin deletes a user, they will get logged out too1
       session[:user_id] = nil if @user == current_user
       flash[:notice] = "Your account and all associated articles were successfully deleted."
       redirect_to root_path

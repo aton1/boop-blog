@@ -1,4 +1,7 @@
-<h1 class="text-center mt-4">Boop Bloggers</h1>
+<h1 class="text-center mt-4">boop bloggers</h1>
+<p class="text-center mt-4">
+  <%= "No boopers yet :(" if @users.empty? %>
+</p>
 <%= render 'pagination' %>
 <%= render 'bloggers' %>
 <%= render 'pagination' %>
