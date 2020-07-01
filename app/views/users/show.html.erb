@@ -1,0 +1,23 @@
+<h1 class="text-center mt-4"><%= @user.username %>'s profile</h1>
+<%= gravatar_for @user, size: 200 %>
+<div class="text-center mt-4">
+  <% if logged_in? %>
+    <% if @user == current_user %>
+      <%= button_to 'Edit Profile', edit_user_path(@user), method: :get, class: "btn btn-outline-info btn-sm" %>
+    <% end %>
+    <% if current_user.admin? %>
+      <%= button_to "Delete Profile", user_path(@user),
+      method: :delete, class: "btn btn-outline-danger btn-sm",
+      data: { confirm: "Are you sure you want to delete user?" }
+      %>
+    <% end %>
+  <% end %>
+</div>
+<% if @articles.length == 0 %>
+  <h3 class="text-center mt-4">No Articles</h3>
+<% else %>
+  <h3 class="text-center mt-4">Articles</h3>
+<% end %>
+<%= render 'articles/pagination' %>
+<%= render 'articles/article' %>
+<%= render 'articles/pagination' %>
