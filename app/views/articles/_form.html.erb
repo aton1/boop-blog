@@ -19,7 +19,10 @@
           <%= f.submit(@article.new_record? ? 'Create Boop' : 'Update Boop', class: "btn btn-outline-light btn-sm") %>
         </div>
       <% end %>
-        <%= link_to '< Go back', articles_path %>
+      <div class="justify-content-center">
+        <%= button_to "Delete Article", article_path(@article), method: :delete, class: "btn btn-danger btn-block" if logged_in? && !@article.new_record? %>
+      </div>
+      <%= link_to '< Go back', articles_path %>
     </div>
   </div>
 </div>
