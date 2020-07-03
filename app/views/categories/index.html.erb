@@ -1,0 +1,7 @@
+<h1 class="text-center mt-4">boop categories</h1>
+<p class="text-center mt-4">
+  <%= "No boop categories yet :(" if @categories.empty? %>
+</p>
+<%= render "pagination" %>
+<%= render "category_listing" %>
+<%= render "pagination" %>

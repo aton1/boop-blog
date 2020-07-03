@@ -25,7 +25,7 @@ class ArticlesController < ApplicationController
       flash[:notice] = "Boop article was created successfully."
       redirect_to @article
     else
-      render 'new'
+      render "new"
     end
   end
 
@@ -34,7 +34,7 @@ class ArticlesController < ApplicationController
       flash[:notice] = "Boop article was updated successfully."
       redirect_to @article
     else
-      render 'edit'
+      render "edit"
     end
   end
 
@@ -55,7 +55,7 @@ class ArticlesController < ApplicationController
   end
 
   def article_params
-    params.require(:article).permit(:title, :description)
+    params.require(:article).permit(:title, :description, category_ids: [])
   end
 
   def require_same_user

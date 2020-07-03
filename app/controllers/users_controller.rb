@@ -26,16 +26,16 @@ class UsersController < ApplicationController
       flash[:notice] = "Welcome to boop, #{@user.username}!"
       redirect_to @user
     else
-      render 'new'
+      render "new"
     end
   end
 
   def update
-    if @user = User.update(user_params)
+    if @user.update(user_params)
       flash[:notice] = "Account was successfully updated."
       redirect_to user_path
     else
-      render 'edit'
+      render "edit"
     end
   end
 
@@ -45,7 +45,7 @@ class UsersController < ApplicationController
       flash[:notice] = "Your account and all associated articles were successfully deleted."
       redirect_to root_path
     else
-      render 'edit'
+      render "edit"
     end
   end
 

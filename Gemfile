@@ -38,6 +38,9 @@ group :development, :test do
   gem 'awesome_print', '~> 1.8'
   # Use sqlite3 as the database for Active Record
   gem 'sqlite3', '~> 1.4'
+  gem 'rspec-rails', '~> 4.0.0'
+  gem 'factory_bot_rails'
+  gem 'faker'
 end
 
 group :development do
