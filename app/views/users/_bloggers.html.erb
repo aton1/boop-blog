@@ -10,7 +10,7 @@
             <h5 class="card-title">
               <%= link_to gravatar_for(user, size: 150), user %>
             </h5>
-            <p class="card-text"><%= pluralize(user.articles.count, "article") %></p>
+            <p class="card-text"><%= pluralize(user.articles.count, "boops") %></p>
             <%= button_to "View Profile", user, method: :get, class: "btn btn-outline-success btn-sm" %>
             <% if logged_in? %>
               <% if user == current_user %>

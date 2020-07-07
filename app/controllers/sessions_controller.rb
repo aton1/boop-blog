@@ -11,7 +11,7 @@ class SessionsController < ApplicationController
       redirect_to user
     else
       flash.now[:alert] = "Invalid login credentials."
-      render 'new'
+      render "new"
     end
   end
 
