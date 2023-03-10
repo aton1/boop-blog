@@ -23,6 +23,7 @@ test:
 
 production:
   <<: *default
+  url: <%= ENV["DATABASE_URL"] %>
   database: boop_blog_production
-  username: anthonyton
+  username: boop_blog
   password: <%= ENV["BOOP_BLOG_DATABASE_PASSWORD"] %>
