@@ -1,5 +1,7 @@
 # frozen_string_literal: true
 
+require "faker"
+
 namespace :seed do
   task :users => :environment do
     10.times do
