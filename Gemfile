@@ -27,7 +27,7 @@ gem 'will_paginate', '~> 3.1.0'
 
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.4.2', require: false
-
+gem 'faker'
 group :production do
   gem 'pg', '~> 0.18.4'
 end
@@ -40,7 +40,6 @@ group :development, :test do
   gem 'sqlite3', '~> 1.4'
   gem 'rspec-rails', '~> 4.0.0'
   gem 'factory_bot_rails'
-  gem 'faker'
 end
 
 group :development do
