@@ -1,24 +1,24 @@
 databases:
-  - name: postgres
+  - name: boop_blog_postgres
     ipAllowList: []
     plan: free
 
 services:
   - type: web
-    name: rails
+    name: boop_blog_rails
     plan: free
     env: ruby
     buildCommand: "./bin/render-build.sh"
-    startCommand: bundle exec rails c
+    startCommand: "bundle exec puma -C config/puma.rb"
     envVars:
       - key: DATABASE_URL
         fromDatabase:
-          name: postgres
+          name: boop_blog_postgres
           property: connectionString
       - key: RAILS_MASTER_KEY
         sync: false
   - type: redis
-    name: redis
+    name: boop_blog_redis
     ipAllowList: []
     plan: free
     maxmemoryPolicy: noeviction
